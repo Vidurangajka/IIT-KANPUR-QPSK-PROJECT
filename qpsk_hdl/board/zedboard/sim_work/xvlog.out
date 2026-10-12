@@ -1,0 +1,36 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/tb/tb_zed_top.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_zed_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/zed_qpsk_top.v" into library work
+INFO: [VRFC 10-311] analyzing module zed_qpsk_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/qpsk_channel.v" into library work
+INFO: [VRFC 10-311] analyzing module qpsk_channel
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/awgn_gen.v" into library work
+INFO: [VRFC 10-311] analyzing module awgn_gen
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/ber_monitor.v" into library work
+INFO: [VRFC 10-311] analyzing module ber_monitor
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_tx.v" into library work
+INFO: [VRFC 10-311] analyzing module qpsk_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_tx_sym.v" into library work
+INFO: [VRFC 10-311] analyzing module qpsk_tx_sym
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/fir_interp_rrc.v" into library work
+INFO: [VRFC 10-311] analyzing module fir_interp_rrc
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_rx.v" into library work
+INFO: [VRFC 10-311] analyzing module qpsk_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/rx_agc.v" into library work
+INFO: [VRFC 10-311] analyzing module rx_agc
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/fir_rrc_rx.v" into library work
+INFO: [VRFC 10-311] analyzing module fir_rrc_rx
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/symbol_timing_recovery.v" into library work
+INFO: [VRFC 10-311] analyzing module symbol_timing_recovery
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/coarse_freq_rec.v" into library work
+INFO: [VRFC 10-311] analyzing module coarse_freq_rec
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/fine_freq_rec.v" into library work
+INFO: [VRFC 10-311] analyzing module fine_freq_rec
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/packet_detector.v" into library work
+INFO: [VRFC 10-311] analyzing module packet_detector
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/rx_extract.v" into library work
+INFO: [VRFC 10-311] analyzing module rx_extract
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_rot.v" into library work
+INFO: [VRFC 10-311] analyzing module cordic_rot
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v" into library work
+INFO: [VRFC 10-311] analyzing module cordic_vec

@@ -1,0 +1,24 @@
+0.7
+2020.2
+Nov 14 2025
+19:37:27
+E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/awgn_gen.v,1791723262,verilog,,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/ber_monitor.v,,awgn_gen,,,../../../rtl;../rtl,,,,,
+E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/ber_monitor.v,1791725446,verilog,,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_tx.v,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_defs.vh,ber_monitor,,,../../../rtl;../rtl,,,,,
+E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/board_defs.vh,1791730446,verilog,,,,,,,,,,,,
+E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/qpsk_channel.v,1791723284,verilog,,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/awgn_gen.v,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/board_defs.vh,qpsk_channel,,,../../../rtl;../rtl,,,,,
+E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/zed_qpsk_top.v,1791730248,verilog,,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/qpsk_channel.v,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_defs.vh;E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/board_defs.vh,zed_qpsk_top,,,../../../rtl;../rtl,,,,,
+E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/tb/tb_zed_top.v,1791763432,verilog,,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/zed_qpsk_top.v,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_defs.vh;E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/board_defs.vh,tb_zed_top,,,../../../rtl;../rtl,,,,,
+E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/coarse_freq_rec.v,1791711390,verilog,,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/fine_freq_rec.v,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_defs.vh,coarse_freq_rec,,,../../../rtl;../rtl,,,,,
+E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_rot.v,1791711390,verilog,,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_defs.vh,cordic_rot,,,../../../rtl;../rtl,,,,,
+E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v,1791711390,verilog,,,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_defs.vh,cordic_vec,,,../../../rtl;../rtl,,,,,
+E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/fine_freq_rec.v,1791711390,verilog,,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/packet_detector.v,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_defs.vh,fine_freq_rec,,,../../../rtl;../rtl,,,,,
+E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/fir_interp_rrc.v,1791723124,verilog,,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_rx.v,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_defs.vh,fir_interp_rrc,,,../../../rtl;../rtl,,,,,
+E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/fir_rrc_rx.v,1791711390,verilog,,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/symbol_timing_recovery.v,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_defs.vh,fir_rrc_rx,,,../../../rtl;../rtl,,,,,
+E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/packet_detector.v,1791711390,verilog,,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/rx_extract.v,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_defs.vh,packet_detector,,,../../../rtl;../rtl,,,,,
+E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_defs.vh,1791763432,verilog,,,,,,,,,,,,
+E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_rx.v,1791711390,verilog,,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/rx_agc.v,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_defs.vh,qpsk_rx,,,../../../rtl;../rtl,,,,,
+E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_tx.v,1791711390,verilog,,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_tx_sym.v,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_defs.vh,qpsk_tx,,,../../../rtl;../rtl,,,,,
+E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_tx_sym.v,1791711390,verilog,,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/fir_interp_rrc.v,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_defs.vh,qpsk_tx_sym,,,../../../rtl;../rtl,,,,,
+E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/rx_agc.v,1791711390,verilog,,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/fir_rrc_rx.v,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_defs.vh,rx_agc,,,../../../rtl;../rtl,,,,,
+E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/rx_extract.v,1791711390,verilog,,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_rot.v,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_defs.vh,rx_extract,,,../../../rtl;../rtl,,,,,
+E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/symbol_timing_recovery.v,1791711390,verilog,,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/coarse_freq_rec.v,E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_defs.vh,symbol_timing_recovery,,,../../../rtl;../rtl,,,,,

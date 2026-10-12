@@ -1,0 +1,31 @@
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/AMDDesignTools/2025.2/Vivado/bin/unwrapped/win64.o/xelab.exe -nolog --timescale 1ns/1ps --debug off -s tb_zed_snap tb_zed_top 
+Multi-threading is on. Using 14 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.qpsk_tx_sym_default
+Compiling module work.fir_interp_rrc_default
+Compiling module work.qpsk_tx
+Compiling module work.cordic_rot_default
+Compiling module work.awgn_gen
+Compiling module work.qpsk_channel_default
+Compiling module work.rx_agc_default
+Compiling module work.fir_rrc_rx_default
+Compiling module work.symbol_timing_recovery_default
+Compiling module work.cordic_vec_default
+Compiling module work.coarse_freq_rec_default
+Compiling module work.cordic_vec(TAGW=16)
+Compiling module work.fine_freq_rec_default
+Compiling module work.packet_detector_default
+Compiling module work.rx_extract_default
+Compiling module work.qpsk_rx
+Compiling module work.ber_monitor
+Compiling module work.zed_qpsk_top(SIM=1)
+Compiling module work.tb_zed_top
+Built simulation snapshot tb_zed_snap

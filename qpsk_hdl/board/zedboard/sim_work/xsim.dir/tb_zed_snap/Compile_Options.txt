@@ -1,0 +1,1 @@
+-nolog --timescale "1ns/1ps" --debug "off" -s "tb_zed_snap" "tb_zed_top" 

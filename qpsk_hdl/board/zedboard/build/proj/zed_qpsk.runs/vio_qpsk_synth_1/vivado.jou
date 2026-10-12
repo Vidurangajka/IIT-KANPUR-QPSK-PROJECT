@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Mon Oct 12 05:37:40 2026
+# Process ID         : 28980
+# Current directory  : E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.runs/vio_qpsk_synth_1
+# Command line       : vivado.exe -log vio_qpsk.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source vio_qpsk.tcl
+# Log file           : E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.runs/vio_qpsk_synth_1/vio_qpsk.vds
+# Journal file       : E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.runs/vio_qpsk_synth_1\vivado.jou
+# Running On         : DESKTOP-VVSK4I8
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 22631
+# Processor Detail   : AMD Ryzen 7 4800H with Radeon Graphics         
+# CPU Frequency      : 2895 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 16556 MB
+# Swap memory        : 16556 MB
+# Total Virtual      : 33113 MB
+# Available Virtual  : 6870 MB
+#-----------------------------------------------------------
+source vio_qpsk.tcl -notrace

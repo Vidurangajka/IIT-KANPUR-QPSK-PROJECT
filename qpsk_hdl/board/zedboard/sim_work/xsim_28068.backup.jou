@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Sun Oct 11 20:24:22 2026
+# Process ID         : 28068
+# Current directory  : E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/sim_work
+# Command line       : xsim.exe -nolog -mode tcl -source {xsim.dir/tb_zed_snap/xsim_script.tcl}
+# Log file           : 
+# Journal file       : E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/sim_work\xsim.jou
+# Running On         : DESKTOP-VVSK4I8
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 22631
+# Processor Detail   : AMD Ryzen 7 4800H with Radeon Graphics         
+# CPU Frequency      : 2895 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 16556 MB
+# Swap memory        : 16556 MB
+# Total Virtual      : 33113 MB
+# Available Virtual  : 8374 MB
+#-----------------------------------------------------------
+source xsim.dir/tb_zed_snap/xsim_script.tcl
+run -all

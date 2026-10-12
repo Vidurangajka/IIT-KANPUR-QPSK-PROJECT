@@ -1,0 +1,32 @@
+building...
+transmitting 16 packets through the RTL transmitter...
+tb_tx_dump: wrote 17216 samples
+
+=== carrier frequency offset (turns/symbol) ===
+  fo = -0.06                         decoded 15   BER 0.000e+00   PASS
+  fo = -0.02                         decoded 15   BER 0.000e+00   PASS
+  fo = 0.0                           decoded 15   BER 0.000e+00   PASS
+  fo = 0.02                          decoded 15   BER 0.000e+00   PASS
+  fo = 0.06                          decoded 15   BER 0.000e+00   PASS
+=== carrier phase offset ===
+  phase = 0 deg                      decoded 15   BER 0.000e+00   PASS
+  phase = 90 deg                     decoded 15   BER 0.000e+00   PASS
+  phase = 180 deg                    decoded 15   BER 0.000e+00   PASS
+  phase = 270 deg                    decoded 15   BER 0.000e+00   PASS
+=== timing offset and drift ===
+  timing offset = 0.0                decoded 15   BER 0.000e+00   PASS
+  timing offset = 0.35               decoded 15   BER 0.000e+00   PASS
+  timing offset = 0.75               decoded 15   BER 0.000e+00   PASS
+  timing drift = 100 ppm             decoded 15   BER 0.000e+00   PASS
+  timing drift = 200 ppm             decoded 15   BER 0.000e+00   PASS
+=== receiver input level ===
+  input scale = 1.0                  decoded 15   BER 0.000e+00   PASS
+  input scale = 0.3                  decoded 15   BER 0.000e+00   PASS
+  input scale = 0.05                 decoded 15   BER 0.000e+00   PASS
+=== EbN0 ===
+  EbN0 = 20 dB                       decoded 15   BER 0.000e+00   PASS
+  EbN0 = 12 dB                       decoded 15   BER 0.000e+00   PASS
+  EbN0 = 9 dB                        decoded 15   BER 0.000e+00   PASS
+  EbN0 = 7 dB                        decoded 15   BER 1.085e-03   PASS (errors consistent with noise)
+
+sweep complete

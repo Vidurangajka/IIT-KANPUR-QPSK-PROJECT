@@ -1,0 +1,5 @@
+vectors/*
+!vectors/.gitkeep
+sim/*.vvp
+sim/*.vcd
+model/__pycache__/

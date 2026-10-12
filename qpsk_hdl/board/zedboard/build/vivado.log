@@ -1,0 +1,1275 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Mon Oct 12 05:36:41 2026
+# Process ID         : 17788
+# Current directory  : E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard
+# Command line       : vivado.exe -mode batch -nojournal -log build/vivado.log -source build.tcl -tclargs
+# Log file           : E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/vivado.log
+# Journal file       : 
+# Running On         : DESKTOP-VVSK4I8
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 22631
+# Processor Detail   : AMD Ryzen 7 4800H with Radeon Graphics         
+# CPU Frequency      : 2895 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 16556 MB
+# Swap memory        : 16556 MB
+# Total Virtual      : 33113 MB
+# Available Virtual  : 8044 MB
+#-----------------------------------------------------------
+source build.tcl
+# set here  [file dirname [file normalize [info script]]]
+# set root  [file normalize $here/../..]
+# set out   $here/build
+# set part  xc7z020clg484-1
+# set debug [expr {[lsearch $argv -nodebug] < 0}]
+# set jobs  8
+# file mkdir $out
+# create_project -force -part $part zed_qpsk $out/proj
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:23 . Memory (MB): peak = 523.371 ; gain = 218.680
+# set core {
+#     qpsk_tx.v qpsk_tx_sym.v fir_interp_rrc.v
+#     qpsk_rx.v rx_agc.v fir_rrc_rx.v symbol_timing_recovery.v
+#     coarse_freq_rec.v fine_freq_rec.v packet_detector.v rx_extract.v
+#     cordic_rot.v cordic_vec.v
+# }
+# foreach f $core { add_files -norecurse $root/rtl/$f }
+# foreach f {zed_qpsk_top.v qpsk_channel.v awgn_gen.v ber_monitor.v} {
+#     add_files -norecurse $here/rtl/$f
+# }
+# add_files -norecurse $root/rtl/qpsk_defs.vh $here/rtl/board_defs.vh
+# set_property file_type {Verilog Header} [get_files *.vh]
+# set_property include_dirs [list $root/rtl $here/rtl] [current_fileset]
+# set_property top zed_qpsk_top [current_fileset]
+# add_files -fileset constrs_1 -norecurse $here/zedboard.xdc
+# if {$debug} {
+#     set_property verilog_define USE_DEBUG_CORES [current_fileset]
+# 
+#     # counters, read in the Hardware Manager
+#     create_ip -name vio -vendor xilinx.com -library ip -module_name vio_qpsk
+#     set_property -dict [list \
+#         CONFIG.C_NUM_PROBE_IN  {9} \
+#         CONFIG.C_NUM_PROBE_OUT {0} \
+#         CONFIG.C_PROBE_IN0_WIDTH {48} \
+#         CONFIG.C_PROBE_IN1_WIDTH {32} \
+#         CONFIG.C_PROBE_IN2_WIDTH {32} \
+#         CONFIG.C_PROBE_IN3_WIDTH {32} \
+#         CONFIG.C_PROBE_IN4_WIDTH {32} \
+#         CONFIG.C_PROBE_IN5_WIDTH {24} \
+#         CONFIG.C_PROBE_IN6_WIDTH {20} \
+#         CONFIG.C_PROBE_IN7_WIDTH {9}  \
+#         CONFIG.C_PROBE_IN8_WIDTH {32} \
+#     ] [get_ips vio_qpsk]
+# 
+#     # receiver internals; storage qualification lets a capture keep only
+#     # the symbol strobes, which gives a constellation of 4096 symbols
+#     create_ip -name ila -vendor xilinx.com -library ip -module_name ila_qpsk
+#     set_property -dict [list \
+#         CONFIG.C_NUM_OF_PROBES {8} \
+#         CONFIG.C_DATA_DEPTH {4096} \
+#         CONFIG.C_EN_STRG_QUAL {1} \
+#         CONFIG.C_PROBE0_WIDTH {1}  \
+#         CONFIG.C_PROBE1_WIDTH {16} \
+#         CONFIG.C_PROBE2_WIDTH {16} \
+#         CONFIG.C_PROBE3_WIDTH {1}  \
+#         CONFIG.C_PROBE4_WIDTH {16} \
+#         CONFIG.C_PROBE5_WIDTH {16} \
+#         CONFIG.C_PROBE6_WIDTH {1}  \
+#         CONFIG.C_PROBE7_WIDTH {1}  \
+#     ] [get_ips ila_qpsk]
+# 
+#     generate_target all [get_ips]
+# }
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2025.2/Vivado/data/ip'.
+create_ip: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 630.094 ; gain = 80.484
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ila_qpsk'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ila_qpsk'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'e:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.gen/sources_1/ip/ila_qpsk/ila_qpsk_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ila_qpsk'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ila_qpsk'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ila_qpsk'...
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'vio_qpsk'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'vio_qpsk'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'vio_qpsk'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'vio_qpsk'...
+generate_target: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 646.570 ; gain = 14.676
+# launch_runs synth_1 -jobs $jobs
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Mon Oct 12 05:37:38 2026] Launched ila_qpsk_synth_1, vio_qpsk_synth_1...
+Run output will be captured here:
+ila_qpsk_synth_1: E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.runs/ila_qpsk_synth_1/runme.log
+vio_qpsk_synth_1: E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.runs/vio_qpsk_synth_1/runme.log
+[Mon Oct 12 05:37:38 2026] Launched synth_1...
+Run output will be captured here: E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 646.688 ; gain = 0.117
+# wait_on_run synth_1
+[Mon Oct 12 05:37:38 2026] Waiting for synth_1 to finish...
+
+*** Running vivado
+    with args -log zed_qpsk_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source zed_qpsk_top.tcl
+
+
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Mon Oct 12 05:40:46 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source zed_qpsk_top.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 523.605 ; gain = 219.945
+Command: synth_design -top zed_qpsk_top -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 31620
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1336.047 ; gain = 539.516
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'zed_qpsk_top' [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/zed_qpsk_top.v:36]
+INFO: [Synth 8-6157] synthesizing module 'MMCME2_BASE' [C:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:95964]
+	Parameter CLKFBOUT_MULT_F bound to: 1.000000e+01 - type: double 
+	Parameter CLKIN1_PERIOD bound to: 1.000000e+01 - type: double 
+	Parameter CLKOUT0_DIVIDE_F bound to: 5.000000e+01 - type: double 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_BASE' (0#1) [C:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:95964]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [C:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:2678]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [C:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:2678]
+INFO: [Synth 8-6157] synthesizing module 'qpsk_tx' [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_tx.v:14]
+INFO: [Synth 8-6157] synthesizing module 'qpsk_tx_sym' [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_tx_sym.v:17]
+INFO: [Synth 8-6155] done synthesizing module 'qpsk_tx_sym' (0#1) [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_tx_sym.v:17]
+INFO: [Synth 8-6157] synthesizing module 'fir_interp_rrc' [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/fir_interp_rrc.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'fir_interp_rrc' (0#1) [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/fir_interp_rrc.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'qpsk_tx' (0#1) [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_tx.v:14]
+INFO: [Synth 8-6157] synthesizing module 'qpsk_channel' [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/qpsk_channel.v:20]
+INFO: [Synth 8-6157] synthesizing module 'cordic_rot' [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_rot.v:16]
+	Parameter UNIT_INPUT bound to: 0 - type: integer 
+	Parameter TAGW bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'cordic_rot' (0#1) [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_rot.v:16]
+INFO: [Synth 8-6157] synthesizing module 'awgn_gen' [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/awgn_gen.v:17]
+INFO: [Synth 8-6155] done synthesizing module 'awgn_gen' (0#1) [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/awgn_gen.v:17]
+INFO: [Synth 8-6155] done synthesizing module 'qpsk_channel' (0#1) [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/qpsk_channel.v:20]
+INFO: [Synth 8-6157] synthesizing module 'qpsk_rx' [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_rx.v:29]
+INFO: [Synth 8-6157] synthesizing module 'rx_agc' [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/rx_agc.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'rx_agc' (0#1) [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/rx_agc.v:23]
+INFO: [Synth 8-6157] synthesizing module 'fir_rrc_rx' [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/fir_rrc_rx.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'fir_rrc_rx' (0#1) [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/fir_rrc_rx.v:16]
+INFO: [Synth 8-6157] synthesizing module 'symbol_timing_recovery' [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/symbol_timing_recovery.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'symbol_timing_recovery' (0#1) [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/symbol_timing_recovery.v:25]
+INFO: [Synth 8-6157] synthesizing module 'coarse_freq_rec' [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/coarse_freq_rec.v:34]
+INFO: [Synth 8-6157] synthesizing module 'cordic_vec' [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:16]
+	Parameter TAGW bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'cordic_vec' (0#1) [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:16]
+INFO: [Synth 8-6157] synthesizing module 'cordic_rot__parameterized0' [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_rot.v:16]
+	Parameter UNIT_INPUT bound to: 1 - type: integer 
+	Parameter TAGW bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'cordic_rot__parameterized0' (0#1) [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_rot.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'coarse_freq_rec' (0#1) [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/coarse_freq_rec.v:34]
+INFO: [Synth 8-6157] synthesizing module 'fine_freq_rec' [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/fine_freq_rec.v:20]
+INFO: [Synth 8-6157] synthesizing module 'cordic_vec__parameterized0' [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:16]
+	Parameter TAGW bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'cordic_vec__parameterized0' (0#1) [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'fine_freq_rec' (0#1) [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/fine_freq_rec.v:20]
+INFO: [Synth 8-6157] synthesizing module 'packet_detector' [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/packet_detector.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'packet_detector' (0#1) [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/packet_detector.v:29]
+INFO: [Synth 8-6157] synthesizing module 'rx_extract' [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/rx_extract.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'rx_extract' (0#1) [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/rx_extract.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'qpsk_rx' (0#1) [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/qpsk_rx.v:29]
+INFO: [Synth 8-6157] synthesizing module 'ber_monitor' [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/ber_monitor.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'ber_monitor' (0#1) [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/ber_monitor.v:29]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/zed_qpsk_top.v:285]
+INFO: [Synth 8-6157] synthesizing module 'vio_qpsk' [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.runs/synth_1/.Xil/Vivado-3276-DESKTOP-VVSK4I8/realtime/vio_qpsk_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'vio_qpsk' (0#1) [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.runs/synth_1/.Xil/Vivado-3276-DESKTOP-VVSK4I8/realtime/vio_qpsk_stub.v:6]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/zed_qpsk_top.v:297]
+INFO: [Synth 8-6157] synthesizing module 'ila_qpsk' [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.runs/synth_1/.Xil/Vivado-3276-DESKTOP-VVSK4I8/realtime/ila_qpsk_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila_qpsk' (0#1) [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.runs/synth_1/.Xil/Vivado-3276-DESKTOP-VVSK4I8/realtime/ila_qpsk_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'zed_qpsk_top' (0#1) [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/zed_qpsk_top.v:36]
+WARNING: [Synth 8-6014] Unused sequential element g_iter[15].zr_reg was removed.  [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_rot.v:122]
+WARNING: [Synth 8-6014] Unused sequential element g_iter[14].xr_reg was removed.  [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:91]
+WARNING: [Synth 8-6014] Unused sequential element g_iter[15].xr_reg was removed.  [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:91]
+WARNING: [Synth 8-6014] Unused sequential element g_iter[15].yr_reg was removed.  [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:91]
+WARNING: [Synth 8-6014] Unused sequential element g_iter[13].xr_reg was removed.  [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:91]
+WARNING: [Synth 8-6014] Unused sequential element g_iter[14].yr_reg was removed.  [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:91]
+WARNING: [Synth 8-6014] Unused sequential element g_iter[15].zr_reg was removed.  [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_rot.v:122]
+WARNING: [Synth 8-6014] Unused sequential element g_iter[14].xr_reg was removed.  [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:91]
+WARNING: [Synth 8-6014] Unused sequential element g_iter[15].xr_reg was removed.  [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:91]
+WARNING: [Synth 8-6014] Unused sequential element g_iter[15].yr_reg was removed.  [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:91]
+WARNING: [Synth 8-6014] Unused sequential element g_iter[13].xr_reg was removed.  [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:91]
+WARNING: [Synth 8-6014] Unused sequential element g_iter[14].yr_reg was removed.  [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:91]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_ber'. This will prevent further optimization [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/zed_qpsk_top.v:231]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_vio'. This will prevent further optimization [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/zed_qpsk_top.v:285]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_rx'. This will prevent further optimization [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/zed_qpsk_top.v:215]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_ch'. This will prevent further optimization [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/zed_qpsk_top.v:202]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_ila'. This will prevent further optimization [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/rtl/zed_qpsk_top.v:297]
+WARNING: [Synth 8-7129] Port x_i[15] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port x_i[14] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port x_i[13] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port x_i[12] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port x_i[11] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port x_i[10] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port x_i[9] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port x_i[8] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port x_i[7] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port x_i[6] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port x_i[5] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port x_i[4] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port x_i[3] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port x_i[2] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port x_i[1] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port x_i[0] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port y_i[15] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port y_i[14] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port y_i[13] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port y_i[12] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port y_i[11] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port y_i[10] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port y_i[9] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port y_i[8] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port y_i[7] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port y_i[6] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port y_i[5] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port y_i[4] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port y_i[3] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port y_i[2] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port y_i[1] in module cordic_rot__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port y_i[0] in module cordic_rot__parameterized0 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1513.422 ; gain = 716.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 1513.422 ; gain = 716.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 1513.422 ; gain = 716.891
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.347 . Memory (MB): peak = 1513.422 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [e:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.gen/sources_1/ip/ila_qpsk/ila_qpsk/ila_qpsk_in_context.xdc] for cell 'u_ila'
+Finished Parsing XDC File [e:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.gen/sources_1/ip/ila_qpsk/ila_qpsk/ila_qpsk_in_context.xdc] for cell 'u_ila'
+Parsing XDC File [e:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.gen/sources_1/ip/vio_qpsk/vio_qpsk/vio_qpsk_in_context.xdc] for cell 'u_vio'
+Finished Parsing XDC File [e:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.gen/sources_1/ip/vio_qpsk/vio_qpsk/vio_qpsk_in_context.xdc] for cell 'u_vio'
+Parsing XDC File [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/zedboard.xdc]
+WARNING: [Vivado 12-584] No ports matched '[get_ports -of_objects [get_iobanks 13]]'. [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/zedboard.xdc:35]
+WARNING: [Vivado 12-584] No ports matched '[get_ports -of_objects [get_iobanks 33]]'. [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/zedboard.xdc:36]
+WARNING: [Vivado 12-584] No ports matched '[get_ports -of_objects [get_iobanks 34]]'. [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/zedboard.xdc:37]
+WARNING: [Vivado 12-584] No ports matched '[get_ports -of_objects [get_iobanks 35]]'. [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/zedboard.xdc:38]
+Finished Parsing XDC File [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/zedboard.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/zedboard.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/zed_qpsk_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/zed_qpsk_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 1588.332 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  MMCME2_BASE => MMCME2_ADV: 1 instance 
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.435 . Memory (MB): peak = 1588.332 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:28 ; elapsed = 00:00:53 . Memory (MB): peak = 1588.332 ; gain = 791.801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:28 ; elapsed = 00:00:53 . Memory (MB): peak = 1588.332 ; gain = 791.801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:53 . Memory (MB): peak = 1588.332 ; gain = 791.801
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'rx_extract'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                              001 |                               00
+                  S_WAIT |                              010 |                               01
+                   S_PAY |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'rx_extract'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:30 ; elapsed = 00:01:00 . Memory (MB): peak = 1588.332 ; gain = 791.801
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   64 Bit       Adders := 1     
+	   3 Input   48 Bit       Adders := 1     
+	   2 Input   43 Bit       Adders := 1     
+	   2 Input   40 Bit       Adders := 3     
+	   2 Input   39 Bit       Adders := 2     
+	   2 Input   38 Bit       Adders := 4     
+	   4 Input   37 Bit       Adders := 1     
+	  11 Input   36 Bit       Adders := 2     
+	   2 Input   36 Bit       Adders := 2     
+	   2 Input   33 Bit       Adders := 1     
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input   27 Bit       Adders := 1     
+	   3 Input   26 Bit       Adders := 1     
+	   2 Input   26 Bit       Adders := 1     
+	   2 Input   25 Bit       Adders := 2     
+	   3 Input   24 Bit       Adders := 2     
+	   2 Input   24 Bit       Adders := 2     
+	   2 Input   23 Bit       Adders := 4     
+	   2 Input   22 Bit       Adders := 2     
+	   2 Input   21 Bit       Adders := 14    
+	  14 Input   21 Bit       Adders := 2     
+	   2 Input   20 Bit       Adders := 18    
+	   3 Input   20 Bit       Adders := 182   
+	   4 Input   20 Bit       Adders := 2     
+	   2 Input   18 Bit       Adders := 98    
+	   4 Input   18 Bit       Adders := 2     
+	   2 Input   17 Bit       Adders := 42    
+	   3 Input   17 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 6     
+	   3 Input   16 Bit       Adders := 3     
+	   3 Input   14 Bit       Adders := 1     
+	   3 Input   10 Bit       Adders := 2     
+	  17 Input   10 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 3     
+	   2 Input    8 Bit       Adders := 2     
+	   2 Input    5 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 4     
+	   2 Input    3 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 3     
++---XORs : 
+	   2 Input     64 Bit         XORs := 6     
+	   2 Input     16 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 17    
++---Registers : 
+	               64 Bit    Registers := 2     
+	               48 Bit    Registers := 1     
+	               45 Bit    Registers := 1     
+	               43 Bit    Registers := 2     
+	               39 Bit    Registers := 2     
+	               38 Bit    Registers := 2     
+	               37 Bit    Registers := 1     
+	               36 Bit    Registers := 2     
+	               32 Bit    Registers := 55    
+	               24 Bit    Registers := 2     
+	               23 Bit    Registers := 4     
+	               22 Bit    Registers := 3     
+	               21 Bit    Registers := 22    
+	               20 Bit    Registers := 209   
+	               18 Bit    Registers := 105   
+	               17 Bit    Registers := 66    
+	               16 Bit    Registers := 194   
+	               15 Bit    Registers := 3     
+	               14 Bit    Registers := 1     
+	               10 Bit    Registers := 5     
+	                9 Bit    Registers := 3     
+	                8 Bit    Registers := 3     
+	                7 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 6     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 5     
+	                1 Bit    Registers := 247   
++---Multipliers : 
+	               8x37  Multipliers := 1     
++---Muxes : 
+	   2 Input   48 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 1     
+	   4 Input   32 Bit        Muxes := 1     
+	   2 Input   23 Bit        Muxes := 2     
+	   2 Input   21 Bit        Muxes := 6     
+	   2 Input   20 Bit        Muxes := 208   
+	   2 Input   18 Bit        Muxes := 12    
+	   2 Input   17 Bit        Muxes := 2     
+	   2 Input   16 Bit        Muxes := 56    
+	   3 Input   16 Bit        Muxes := 1     
+	   4 Input   16 Bit        Muxes := 2     
+	   2 Input   15 Bit        Muxes := 8     
+	   2 Input   14 Bit        Muxes := 8     
+	   4 Input   14 Bit        Muxes := 1     
+	   2 Input   13 Bit        Muxes := 7     
+	   2 Input   12 Bit        Muxes := 7     
+	   4 Input   12 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 6     
+	   2 Input   10 Bit        Muxes := 10    
+	   4 Input   10 Bit        Muxes := 3     
+	   3 Input   10 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 8     
+	   3 Input    9 Bit        Muxes := 1     
+	   4 Input    9 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 6     
+	   2 Input    7 Bit        Muxes := 8     
+	   2 Input    6 Bit        Muxes := 7     
+	   2 Input    5 Bit        Muxes := 6     
+	   3 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 12    
+	   2 Input    3 Bit        Muxes := 7     
+	   2 Input    2 Bit        Muxes := 14    
+	   3 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 29    
+	   3 Input    1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP sy0, operation Mode is: (C:0x4000)+A*(B:0x4dba).
+DSP Report: operator sy0 is absorbed into DSP sy0.
+DSP Report: operator py is absorbed into DSP sy0.
+DSP Report: Generating DSP sx0, operation Mode is: (C:0x4000)+A*(B:0x4dba).
+DSP Report: operator sx0 is absorbed into DSP sx0.
+DSP Report: operator px is absorbed into DSP sx0.
+DSP Report: Generating DSP p_i0, operation Mode is: A*B.
+DSP Report: operator p_i0 is absorbed into DSP p_i0.
+DSP Report: Generating DSP p_q0, operation Mode is: A*B.
+DSP Report: operator p_q0 is absorbed into DSP p_q0.
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_vec/tagpipe_reg[17]' and it is trimmed from '16' to '14' bits. [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:130]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_vec/tagpipe_reg[16]' and it is trimmed from '16' to '14' bits. [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:130]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_vec/tagpipe_reg[15]' and it is trimmed from '16' to '14' bits. [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:130]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_vec/tagpipe_reg[14]' and it is trimmed from '16' to '14' bits. [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:130]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_vec/tagpipe_reg[13]' and it is trimmed from '16' to '14' bits. [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:130]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_vec/tagpipe_reg[12]' and it is trimmed from '16' to '14' bits. [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:130]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_vec/tagpipe_reg[11]' and it is trimmed from '16' to '14' bits. [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:130]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_vec/tagpipe_reg[10]' and it is trimmed from '16' to '14' bits. [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:130]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_vec/tagpipe_reg[9]' and it is trimmed from '16' to '14' bits. [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:130]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_vec/tagpipe_reg[8]' and it is trimmed from '16' to '14' bits. [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:130]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_vec/tagpipe_reg[7]' and it is trimmed from '16' to '14' bits. [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:130]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_vec/tagpipe_reg[6]' and it is trimmed from '16' to '14' bits. [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:130]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_vec/tagpipe_reg[5]' and it is trimmed from '16' to '14' bits. [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:130]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_vec/tagpipe_reg[4]' and it is trimmed from '16' to '14' bits. [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:130]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_vec/tagpipe_reg[3]' and it is trimmed from '16' to '14' bits. [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:130]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_vec/tagpipe_reg[2]' and it is trimmed from '16' to '14' bits. [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:130]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_vec/tagpipe_reg[1]' and it is trimmed from '16' to '14' bits. [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:130]
+WARNING: [Synth 8-3936] Found unconnected internal register 'u_vec/tagpipe_reg[0]' and it is trimmed from '16' to '14' bits. [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/rtl/cordic_vec.v:130]
+DSP Report: Generating DSP integ_n1, operation Mode is: (A:0xa99f)*B.
+DSP Report: operator integ_n1 is absorbed into DSP integ_n1.
+DSP Report: Generating DSP prop0, operation Mode is: (A:0x6787)*B.
+DSP Report: operator prop0 is absorbed into DSP prop0.
+DSP Report: Generating DSP rq0, operation Mode is: (C:0x800)+A*B.
+DSP Report: operator rq0 is absorbed into DSP rq0.
+DSP Report: operator mq is absorbed into DSP rq0.
+DSP Report: Generating DSP sq_q, operation Mode is: A*B.
+DSP Report: operator sq_q is absorbed into DSP sq_q.
+DSP Report: Generating DSP ri0, operation Mode is: (C:0x800)+A*B.
+DSP Report: operator ri0 is absorbed into DSP ri0.
+DSP Report: operator mi is absorbed into DSP ri0.
+DSP Report: Generating DSP sq_i, operation Mode is: A*B.
+DSP Report: operator sq_i is absorbed into DSP sq_i.
+DSP Report: Generating DSP dgm, operation Mode is: A*B.
+DSP Report: operator dgm is absorbed into DSP dgm.
+DSP Report: operator dgm is absorbed into DSP dgm.
+DSP Report: Generating DSP dgm, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator dgm is absorbed into DSP dgm.
+DSP Report: operator dgm is absorbed into DSP dgm.
+DSP Report: Generating DSP accI1, operation Mode is: A*(B:0x2460).
+DSP Report: operator accI1 is absorbed into DSP accI1.
+DSP Report: Generating DSP accI0, operation Mode is: PCIN+A*(B:0x3fffb).
+DSP Report: operator accI0 is absorbed into DSP accI0.
+DSP Report: operator accI20 is absorbed into DSP accI0.
+DSP Report: Generating DSP accI0, operation Mode is: PCIN+A*(B:0x1f2f).
+DSP Report: operator accI0 is absorbed into DSP accI0.
+DSP Report: operator accI2 is absorbed into DSP accI0.
+DSP Report: Generating DSP accI0, operation Mode is: PCIN+A*(B:0x1284).
+DSP Report: operator accI0 is absorbed into DSP accI0.
+DSP Report: operator accI3 is absorbed into DSP accI0.
+DSP Report: Generating DSP accI0, operation Mode is: PCIN+A*(B:0x505).
+DSP Report: operator accI0 is absorbed into DSP accI0.
+DSP Report: operator accI4 is absorbed into DSP accI0.
+DSP Report: Generating DSP accI0, operation Mode is: PCIN+A*(B:0x3fc9b).
+DSP Report: operator accI0 is absorbed into DSP accI0.
+DSP Report: operator accI5 is absorbed into DSP accI0.
+DSP Report: Generating DSP accI0, operation Mode is: PCIN+A*(B:0x3fafb).
+DSP Report: operator accI0 is absorbed into DSP accI0.
+DSP Report: operator accI6 is absorbed into DSP accI0.
+DSP Report: Generating DSP accI0, operation Mode is: PCIN+A*(B:0x3fd99).
+DSP Report: operator accI0 is absorbed into DSP accI0.
+DSP Report: operator accI7 is absorbed into DSP accI0.
+DSP Report: Generating DSP accI0, operation Mode is: PCIN+A*(B:0x7f).
+DSP Report: operator accI0 is absorbed into DSP accI0.
+DSP Report: operator accI8 is absorbed into DSP accI0.
+DSP Report: Generating DSP accI0, operation Mode is: PCIN+A*(B:0x15c).
+DSP Report: operator accI0 is absorbed into DSP accI0.
+DSP Report: operator accI9 is absorbed into DSP accI0.
+DSP Report: Generating DSP accI0, operation Mode is: PCIN+A*(B:0x7f).
+DSP Report: operator accI0 is absorbed into DSP accI0.
+DSP Report: operator accI10 is absorbed into DSP accI0.
+DSP Report: Generating DSP accI0, operation Mode is: PCIN+A*(B:0x3ff85).
+DSP Report: operator accI0 is absorbed into DSP accI0.
+DSP Report: operator accI11 is absorbed into DSP accI0.
+DSP Report: Generating DSP accI0, operation Mode is: PCIN+A*(B:0x3ff79).
+DSP Report: operator accI0 is absorbed into DSP accI0.
+DSP Report: operator accI12 is absorbed into DSP accI0.
+DSP Report: Generating DSP accI0, operation Mode is: PCIN+A*(B:0x19).
+DSP Report: operator accI0 is absorbed into DSP accI0.
+DSP Report: operator accI13 is absorbed into DSP accI0.
+DSP Report: Generating DSP accI0, operation Mode is: PCIN+A*(B:0x87).
+DSP Report: operator accI0 is absorbed into DSP accI0.
+DSP Report: operator accI14 is absorbed into DSP accI0.
+DSP Report: Generating DSP accI0, operation Mode is: PCIN+A*(B:0x58).
+DSP Report: operator accI0 is absorbed into DSP accI0.
+DSP Report: operator accI15 is absorbed into DSP accI0.
+DSP Report: Generating DSP accI0, operation Mode is: PCIN+A*(B:0x3ffe1).
+DSP Report: operator accI0 is absorbed into DSP accI0.
+DSP Report: operator accI16 is absorbed into DSP accI0.
+DSP Report: Generating DSP accI0, operation Mode is: PCIN+A*(B:0x3ffad).
+DSP Report: operator accI0 is absorbed into DSP accI0.
+DSP Report: operator accI17 is absorbed into DSP accI0.
+DSP Report: Generating DSP accI0, operation Mode is: PCIN+A*(B:0x3ffe1).
+DSP Report: operator accI0 is absorbed into DSP accI0.
+DSP Report: operator accI18 is absorbed into DSP accI0.
+DSP Report: Generating DSP accI0, operation Mode is: PCIN+A*(B:0x29).
+DSP Report: operator accI0 is absorbed into DSP accI0.
+DSP Report: operator accI19 is absorbed into DSP accI0.
+DSP Report: Generating DSP accI0, operation Mode is: PCIN+A*(B:0x30).
+DSP Report: operator accI0 is absorbed into DSP accI0.
+DSP Report: operator accI20 is absorbed into DSP accI0.
+DSP Report: Generating DSP accQ1, operation Mode is: A*(B:0x2460).
+DSP Report: operator accQ1 is absorbed into DSP accQ1.
+DSP Report: Generating DSP accQ0, operation Mode is: PCIN+A*(B:0x3fffb).
+DSP Report: operator accQ0 is absorbed into DSP accQ0.
+DSP Report: operator accQ20 is absorbed into DSP accQ0.
+DSP Report: Generating DSP accQ0, operation Mode is: PCIN+A*(B:0x1f2f).
+DSP Report: operator accQ0 is absorbed into DSP accQ0.
+DSP Report: operator accQ2 is absorbed into DSP accQ0.
+DSP Report: Generating DSP accQ0, operation Mode is: PCIN+A*(B:0x1284).
+DSP Report: operator accQ0 is absorbed into DSP accQ0.
+DSP Report: operator accQ3 is absorbed into DSP accQ0.
+DSP Report: Generating DSP accQ0, operation Mode is: PCIN+A*(B:0x505).
+DSP Report: operator accQ0 is absorbed into DSP accQ0.
+DSP Report: operator accQ4 is absorbed into DSP accQ0.
+DSP Report: Generating DSP accQ0, operation Mode is: PCIN+A*(B:0x3fc9b).
+DSP Report: operator accQ0 is absorbed into DSP accQ0.
+DSP Report: operator accQ5 is absorbed into DSP accQ0.
+DSP Report: Generating DSP accQ0, operation Mode is: PCIN+A*(B:0x3fafb).
+DSP Report: operator accQ0 is absorbed into DSP accQ0.
+DSP Report: operator accQ6 is absorbed into DSP accQ0.
+DSP Report: Generating DSP accQ0, operation Mode is: PCIN+A*(B:0x3fd99).
+DSP Report: operator accQ0 is absorbed into DSP accQ0.
+DSP Report: operator accQ7 is absorbed into DSP accQ0.
+DSP Report: Generating DSP accQ0, operation Mode is: PCIN+A*(B:0x7f).
+DSP Report: operator accQ0 is absorbed into DSP accQ0.
+DSP Report: operator accQ8 is absorbed into DSP accQ0.
+DSP Report: Generating DSP accQ0, operation Mode is: PCIN+A*(B:0x15c).
+DSP Report: operator accQ0 is absorbed into DSP accQ0.
+DSP Report: operator accQ9 is absorbed into DSP accQ0.
+DSP Report: Generating DSP accQ0, operation Mode is: PCIN+A*(B:0x7f).
+DSP Report: operator accQ0 is absorbed into DSP accQ0.
+DSP Report: operator accQ10 is absorbed into DSP accQ0.
+DSP Report: Generating DSP accQ0, operation Mode is: PCIN+A*(B:0x3ff85).
+DSP Report: operator accQ0 is absorbed into DSP accQ0.
+DSP Report: operator accQ11 is absorbed into DSP accQ0.
+DSP Report: Generating DSP accQ0, operation Mode is: PCIN+A*(B:0x3ff79).
+DSP Report: operator accQ0 is absorbed into DSP accQ0.
+DSP Report: operator accQ12 is absorbed into DSP accQ0.
+DSP Report: Generating DSP accQ0, operation Mode is: PCIN+A*(B:0x19).
+DSP Report: operator accQ0 is absorbed into DSP accQ0.
+DSP Report: operator accQ13 is absorbed into DSP accQ0.
+DSP Report: Generating DSP accQ0, operation Mode is: PCIN+A*(B:0x87).
+DSP Report: operator accQ0 is absorbed into DSP accQ0.
+DSP Report: operator accQ14 is absorbed into DSP accQ0.
+DSP Report: Generating DSP accQ0, operation Mode is: PCIN+A*(B:0x58).
+DSP Report: operator accQ0 is absorbed into DSP accQ0.
+DSP Report: operator accQ15 is absorbed into DSP accQ0.
+DSP Report: Generating DSP accQ0, operation Mode is: PCIN+A*(B:0x3ffe1).
+DSP Report: operator accQ0 is absorbed into DSP accQ0.
+DSP Report: operator accQ16 is absorbed into DSP accQ0.
+DSP Report: Generating DSP accQ0, operation Mode is: PCIN+A*(B:0x3ffad).
+DSP Report: operator accQ0 is absorbed into DSP accQ0.
+DSP Report: operator accQ17 is absorbed into DSP accQ0.
+DSP Report: Generating DSP accQ0, operation Mode is: PCIN+A*(B:0x3ffe1).
+DSP Report: operator accQ0 is absorbed into DSP accQ0.
+DSP Report: operator accQ18 is absorbed into DSP accQ0.
+DSP Report: Generating DSP accQ0, operation Mode is: PCIN+A*(B:0x29).
+DSP Report: operator accQ0 is absorbed into DSP accQ0.
+DSP Report: operator accQ19 is absorbed into DSP accQ0.
+DSP Report: Generating DSP accQ0, operation Mode is: PCIN+A*(B:0x30).
+DSP Report: operator accQ0 is absorbed into DSP accQ0.
+DSP Report: operator accQ20 is absorbed into DSP accQ0.
+DSP Report: Generating DSP f2_c1q1, operation Mode is: (C:0x4000)+A*(B:0x1555).
+DSP Report: operator f2_c1q1 is absorbed into DSP f2_c1q1.
+DSP Report: operator m1q is absorbed into DSP f2_c1q1.
+DSP Report: Generating DSP f2_c3q1, operation Mode is: (C:0x4000)+A*(B:0x1555).
+DSP Report: operator f2_c3q1 is absorbed into DSP f2_c3q1.
+DSP Report: operator m3q is absorbed into DSP f2_c3q1.
+DSP Report: Generating DSP f3_aq2, operation Mode is: (C:0x8000)+A*B.
+DSP Report: operator f3_aq2 is absorbed into DSP f3_aq2.
+DSP Report: operator h3q is absorbed into DSP f3_aq2.
+DSP Report: Generating DSP f4_bq2, operation Mode is: (C:0x8000)+A*B.
+DSP Report: operator f4_bq2 is absorbed into DSP f4_bq2.
+DSP Report: operator h4q is absorbed into DSP f4_bq2.
+DSP Report: Generating DSP cq1, operation Mode is: (C:0x8000)+A*B.
+DSP Report: operator cq1 is absorbed into DSP cq1.
+DSP Report: operator h5q is absorbed into DSP cq1.
+DSP Report: Generating DSP f2_c1i1, operation Mode is: (C:0x4000)+A*(B:0x1555).
+DSP Report: operator f2_c1i1 is absorbed into DSP f2_c1i1.
+DSP Report: operator m1i is absorbed into DSP f2_c1i1.
+DSP Report: Generating DSP f2_c3i1, operation Mode is: (C:0x4000)+A*(B:0x1555).
+DSP Report: operator f2_c3i1 is absorbed into DSP f2_c3i1.
+DSP Report: operator m3i is absorbed into DSP f2_c3i1.
+DSP Report: Generating DSP f3_ai2, operation Mode is: (C:0x8000)+A*B.
+DSP Report: operator f3_ai2 is absorbed into DSP f3_ai2.
+DSP Report: operator h3i is absorbed into DSP f3_ai2.
+DSP Report: Generating DSP f4_bi2, operation Mode is: (C:0x8000)+A*B.
+DSP Report: operator f4_bi2 is absorbed into DSP f4_bi2.
+DSP Report: operator h4i is absorbed into DSP f4_bi2.
+DSP Report: Generating DSP ci1, operation Mode is: (C:0x8000)+A*B.
+DSP Report: operator ci1 is absorbed into DSP ci1.
+DSP Report: operator h5i is absorbed into DSP ci1.
+DSP Report: Generating DSP eI, operation Mode is: (D-A)*B.
+DSP Report: operator eI is absorbed into DSP eI.
+DSP Report: operator dI is absorbed into DSP eI.
+DSP Report: Generating DSP e, operation Mode is: PCIN+(D-A)*B.
+DSP Report: operator e is absorbed into DSP e.
+DSP Report: operator eQ is absorbed into DSP e.
+DSP Report: operator dQ is absorbed into DSP e.
+DSP Report: Generating DSP integ_n1, operation Mode is: A*(B:0x4293).
+DSP Report: operator integ_n1 is absorbed into DSP integ_n1.
+DSP Report: Generating DSP prop0, operation Mode is: A*(B:0x4104).
+DSP Report: operator prop0 is absorbed into DSP prop0.
+DSP Report: Generating DSP sq_i, operation Mode is: A*B.
+DSP Report: operator sq_i is absorbed into DSP sq_i.
+DSP Report: Generating DSP pw, operation Mode is: PCIN+A*B.
+DSP Report: operator pw is absorbed into DSP pw.
+DSP Report: operator sq_q is absorbed into DSP pw.
+DSP Report: Generating DSP c2_c0, operation Mode is: A*B.
+DSP Report: operator c2_c0 is absorbed into DSP c2_c0.
+DSP Report: operator c2_c0 is absorbed into DSP c2_c0.
+DSP Report: Generating DSP c2_c0, operation Mode is: A*B.
+DSP Report: operator c2_c0 is absorbed into DSP c2_c0.
+DSP Report: operator c2_c0 is absorbed into DSP c2_c0.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_43_out, operation Mode is: A*B.
+DSP Report: operator p_43_out is absorbed into DSP p_43_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_42_out, operation Mode is: A*B.
+DSP Report: operator p_42_out is absorbed into DSP p_42_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+WARNING: [Synth 8-7129] Port in_i[1] in module qpsk_channel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_i[0] in module qpsk_channel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_q[1] in module qpsk_channel is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_q[0] in module qpsk_channel is either unconnected or has no load
+WARNING: [Synth 8-3332] Sequential element (b_thr_reg__38) is unused and will be removed from module packet_detector.
+WARNING: [Synth 8-3332] Sequential element (b_thr_reg__39) is unused and will be removed from module packet_detector.
+WARNING: [Synth 8-3332] Sequential element (b_thr_reg__40) is unused and will be removed from module packet_detector.
+WARNING: [Synth 8-3332] Sequential element (b_thr_reg__41) is unused and will be removed from module packet_detector.
+WARNING: [Synth 8-3332] Sequential element (b_thr_reg__42) is unused and will be removed from module packet_detector.
+WARNING: [Synth 8-3332] Sequential element (b_thr_reg__43) is unused and will be removed from module packet_detector.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:06 ; elapsed = 00:01:47 . Memory (MB): peak = 1619.227 ; gain = 822.695
+---------------------------------------------------------------------------------
+ Sort Area is qpsk_rx__GC0 accI1_13 : 0 0 : 877 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accI1_13 : 0 1 : 334 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accI1_13 : 0 2 : 1091 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accI1_13 : 0 3 : 1091 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accI1_13 : 0 4 : 701 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accI1_13 : 0 5 : 827 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accI1_13 : 0 6 : 701 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accI1_13 : 0 7 : 827 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accI1_13 : 0 8 : 567 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accI1_13 : 0 9 : 679 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accI1_13 : 0 10 : 567 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accI1_13 : 0 11 : 567 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accI1_13 : 0 12 : 618 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accI1_13 : 0 13 : 419 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accI1_13 : 0 14 : 618 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accI1_13 : 0 15 : 567 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accI1_13 : 0 16 : 419 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accI1_13 : 0 17 : 567 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accI1_13 : 0 18 : 419 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accI1_13 : 0 19 : 363 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accI1_13 : 0 20 : 363 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accQ1_1e : 0 0 : 877 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accQ1_1e : 0 1 : 334 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accQ1_1e : 0 2 : 1091 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accQ1_1e : 0 3 : 1091 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accQ1_1e : 0 4 : 701 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accQ1_1e : 0 5 : 827 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accQ1_1e : 0 6 : 701 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accQ1_1e : 0 7 : 827 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accQ1_1e : 0 8 : 567 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accQ1_1e : 0 9 : 679 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accQ1_1e : 0 10 : 567 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accQ1_1e : 0 11 : 567 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accQ1_1e : 0 12 : 618 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accQ1_1e : 0 13 : 419 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accQ1_1e : 0 14 : 618 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accQ1_1e : 0 15 : 567 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accQ1_1e : 0 16 : 419 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accQ1_1e : 0 17 : 567 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accQ1_1e : 0 18 : 419 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accQ1_1e : 0 19 : 363 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 accQ1_1e : 0 20 : 363 13182 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 dgm_10 : 0 0 : 3022 4448 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 dgm_10 : 0 1 : 1426 4448 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 eI_28 : 0 0 : 2152 4402 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 eI_28 : 0 1 : 2250 4402 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 sq_i_35 : 0 0 : 1937 3969 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 sq_i_35 : 0 1 : 2032 3969 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 c2_c0_33 : 0 0 : 3022 3022 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 c2_c0_34 : 0 0 : 3022 3022 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 ci1_26 : 0 0 : 2983 2983 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 cq1_2f : 0 0 : 2983 2983 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 f4_bi2_23 : 0 0 : 2880 2880 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 f4_bq2_2d : 0 0 : 2880 2880 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 f3_ai2_21 : 0 0 : 2777 2777 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 f3_aq2_2c : 0 0 : 2777 2777 : Used 1 time 0
+ Sort Area is qpsk_channel__GC0 p_i0_3 : 0 0 : 2667 2667 : Used 1 time 0
+ Sort Area is qpsk_channel__GC0 p_q0_5 : 0 0 : 2667 2667 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 ri0_a : 0 0 : 2509 2509 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 rq0_e : 0 0 : 2509 2509 : Used 1 time 0
+ Sort Area is zed_qpsk_top__GC0 p_0_out_42 : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is zed_qpsk_top__GC0 p_0_out_43 : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is zed_qpsk_top__GC0 p_0_out_4d : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is zed_qpsk_top__GC0 p_0_out_4e : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 sq_i_c : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 sq_q_f : 0 0 : 1937 1937 : Used 1 time 0
+ Sort Area is zed_qpsk_top__GC0 p_0_out_40 : 0 0 : 1659 1659 : Used 1 time 0
+ Sort Area is zed_qpsk_top__GC0 p_0_out_44 : 0 0 : 1659 1659 : Used 1 time 0
+ Sort Area is zed_qpsk_top__GC0 p_0_out_4c : 0 0 : 1659 1659 : Used 1 time 0
+ Sort Area is zed_qpsk_top__GC0 p_0_out_4f : 0 0 : 1659 1659 : Used 1 time 0
+ Sort Area is zed_qpsk_top__GC0 p_0_out_3e : 0 0 : 1335 1335 : Used 1 time 0
+ Sort Area is zed_qpsk_top__GC0 p_0_out_4b : 0 0 : 1335 1335 : Used 1 time 0
+ Sort Area is fine_freq_rec__GC0 integ_n1_8 : 0 0 : 1203 1203 : Used 1 time 0
+ Sort Area is cordic_rot sx0_0 : 0 0 : 1192 1192 : Used 3 time 0
+ Sort Area is cordic_rot sy0_2 : 0 0 : 1192 1192 : Used 3 time 0
+ Sort Area is qpsk_rx__GC0 f2_c1i1_25 : 0 0 : 1140 1140 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 f2_c1q1_2e : 0 0 : 1140 1140 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 f2_c3i1_1f : 0 0 : 1140 1140 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 f2_c3q1_2b : 0 0 : 1140 1140 : Used 1 time 0
+ Sort Area is zed_qpsk_top__GC0 p_0_out_3b : 0 0 : 1054 1054 : Used 1 time 0
+ Sort Area is zed_qpsk_top__GC0 p_0_out_3d : 0 0 : 1054 1054 : Used 1 time 0
+ Sort Area is zed_qpsk_top__GC0 p_0_out_45 : 0 0 : 1054 1054 : Used 1 time 0
+ Sort Area is zed_qpsk_top__GC0 p_0_out_46 : 0 0 : 1054 1054 : Used 1 time 0
+ Sort Area is zed_qpsk_top__GC0 p_0_out_49 : 0 0 : 1054 1054 : Used 1 time 0
+ Sort Area is zed_qpsk_top__GC0 p_0_out_4a : 0 0 : 1054 1054 : Used 1 time 0
+ Sort Area is zed_qpsk_top__GC0 p_0_out_50 : 0 0 : 1054 1054 : Used 1 time 0
+ Sort Area is zed_qpsk_top__GC0 p_0_out_51 : 0 0 : 1054 1054 : Used 1 time 0
+ Sort Area is zed_qpsk_top__GC0 p_0_out_37 : 0 0 : 954 954 : Used 1 time 0
+ Sort Area is zed_qpsk_top__GC0 p_0_out_47 : 0 0 : 954 954 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 integ_n1_32 : 0 0 : 866 866 : Used 1 time 0
+ Sort Area is qpsk_rx__GC0 prop0_30 : 0 0 : 866 866 : Used 1 time 0
+ Sort Area is fine_freq_rec__GC0 prop0_6 : 0 0 : 822 822 : Used 1 time 0
+ Sort Area is zed_qpsk_top__GC0 p_42_out_48 : 0 0 : 569 569 : Used 1 time 0
+ Sort Area is zed_qpsk_top__GC0 p_43_out_39 : 0 0 : 569 569 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++-----------------------+-------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name            | DSP Mapping             | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-----------------------+-------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|cordic_rot             | (C:0x4000)+A*(B:0x4dba) | 16     | 16     | 16     | -      | 31     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|cordic_rot             | (C:0x4000)+A*(B:0x4dba) | 16     | 16     | 16     | -      | 31     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|qpsk_channel           | A*B                     | 21     | 17     | -      | -      | 38     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|qpsk_channel           | A*B                     | 21     | 17     | -      | -      | 38     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fine_freq_rec          | (A:0xa99f)*B            | 14     | 17     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fine_freq_rec          | (A:0x6787)*B            | 14     | 16     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|rx_agc                 | (C:0x800)+A*B           | 21     | 16     | 13     | -      | 36     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|rx_agc                 | A*B                     | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|rx_agc                 | (C:0x800)+A*B           | 21     | 16     | 13     | -      | 36     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|rx_agc                 | A*B                     | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|rx_agc                 | A*B                     | 21     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|rx_agc                 | (PCIN>>17)+A*B          | 21     | 10     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | A*(B:0x2460)            | 17     | 15     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x3fffb)      | 17     | 4      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x1f2f)       | 17     | 14     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x1284)       | 17     | 14     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x505)        | 17     | 12     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x3fc9b)      | 17     | 11     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x3fafb)      | 17     | 12     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x3fd99)      | 17     | 11     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x7f)         | 17     | 8      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x15c)        | 17     | 10     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x7f)         | 17     | 8      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x3ff85)      | 17     | 8      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x3ff79)      | 17     | 9      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x19)         | 17     | 6      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x87)         | 17     | 9      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x58)         | 17     | 8      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x3ffe1)      | 17     | 6      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x3ffad)      | 17     | 8      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x3ffe1)      | 17     | 6      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x29)         | 17     | 7      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x30)         | 17     | 7      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | A*(B:0x2460)            | 17     | 15     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x3fffb)      | 17     | 4      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x1f2f)       | 17     | 14     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x1284)       | 17     | 14     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x505)        | 17     | 12     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x3fc9b)      | 17     | 11     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x3fafb)      | 17     | 12     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x3fd99)      | 17     | 11     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x7f)         | 17     | 8      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x15c)        | 17     | 10     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x7f)         | 17     | 8      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x3ff85)      | 17     | 8      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x3ff79)      | 17     | 9      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x19)         | 17     | 6      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x87)         | 17     | 9      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x58)         | 17     | 8      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x3ffe1)      | 17     | 6      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x3ffad)      | 17     | 8      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x3ffe1)      | 17     | 6      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x29)         | 17     | 7      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*(B:0x30)         | 17     | 7      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|symbol_timing_recovery | (C:0x4000)+A*(B:0x1555) | 20     | 14     | 16     | -      | 33     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|symbol_timing_recovery | (C:0x4000)+A*(B:0x1555) | 20     | 14     | 16     | -      | 33     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|symbol_timing_recovery | (C:0x8000)+A*B          | 21     | 17     | 17     | -      | 37     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|symbol_timing_recovery | (C:0x8000)+A*B          | 22     | 17     | 17     | -      | 38     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|symbol_timing_recovery | (C:0x8000)+A*B          | 23     | 17     | 17     | -      | 39     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|symbol_timing_recovery | (C:0x4000)+A*(B:0x1555) | 20     | 14     | 16     | -      | 33     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|symbol_timing_recovery | (C:0x4000)+A*(B:0x1555) | 20     | 14     | 16     | -      | 33     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|symbol_timing_recovery | (C:0x8000)+A*B          | 21     | 17     | 17     | -      | 37     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|symbol_timing_recovery | (C:0x8000)+A*B          | 22     | 17     | 17     | -      | 38     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|symbol_timing_recovery | (C:0x8000)+A*B          | 23     | 17     | 17     | -      | 39     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|symbol_timing_recovery | (D-A)*B                 | 16     | 16     | -      | 16     | 33     | 0    | 0    | -    | 0    | 0     | 0    | 0    | 
+|symbol_timing_recovery | PCIN+(D-A)*B            | 16     | 16     | -      | 16     | 33     | 0    | 0    | -    | 0    | 0     | 0    | 0    | 
+|symbol_timing_recovery | A*(B:0x4293)            | 22     | 16     | -      | -      | 38     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|symbol_timing_recovery | A*(B:0x4104)            | 22     | 16     | -      | -      | 38     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|packet_detector        | A*B                     | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|packet_detector        | PCIN+A*B                | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|packet_detector        | A*B                     | 21     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|packet_detector        | A*B                     | 21     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_interp_rrc         | A*B                     | 16     | 10     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_interp_rrc         | A*B                     | 16     | 10     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_interp_rrc         | A*B                     | 16     | 14     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_interp_rrc         | A*B                     | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_interp_rrc         | A*B                     | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_interp_rrc         | A*B                     | 16     | 14     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_interp_rrc         | A*B                     | 16     | 12     | -      | -      | 28     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_interp_rrc         | A*B                     | 16     | 10     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_interp_rrc         | A*B                     | 16     | 10     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_interp_rrc         | A*B                     | 16     | 6      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_interp_rrc         | A*B                     | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_interp_rrc         | A*B                     | 16     | 10     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_interp_rrc         | A*B                     | 16     | 10     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_interp_rrc         | A*B                     | 16     | 14     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_interp_rrc         | A*B                     | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_interp_rrc         | A*B                     | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_interp_rrc         | A*B                     | 16     | 14     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_interp_rrc         | A*B                     | 16     | 12     | -      | -      | 28     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_interp_rrc         | A*B                     | 16     | 10     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_interp_rrc         | A*B                     | 16     | 10     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_interp_rrc         | A*B                     | 16     | 6      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_interp_rrc         | A*B                     | 16     | 9      | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++-----------------------+-------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:18 ; elapsed = 00:02:15 . Memory (MB): peak = 1799.043 ; gain = 1002.512
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:29 ; elapsed = 00:02:30 . Memory (MB): peak = 1882.484 ; gain = 1085.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:44 ; elapsed = 00:02:50 . Memory (MB): peak = 1912.375 ; gain = 1115.844
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:52 ; elapsed = 00:03:01 . Memory (MB): peak = 2108.535 ; gain = 1312.004
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:52 ; elapsed = 00:03:01 . Memory (MB): peak = 2108.535 ; gain = 1312.004
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:55 ; elapsed = 00:03:04 . Memory (MB): peak = 2108.535 ; gain = 1312.004
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:55 ; elapsed = 00:03:04 . Memory (MB): peak = 2108.535 ; gain = 1312.004
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:55 ; elapsed = 00:03:05 . Memory (MB): peak = 2108.535 ; gain = 1312.004
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:56 ; elapsed = 00:03:05 . Memory (MB): peak = 2108.535 ; gain = 1312.004
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+--------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                       | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+--------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|qpsk_rx     | u_cf/u_vec/tagpipe_reg[17][0]  | 18     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|qpsk_rx     | u_ff/u_vec/tagpipe_reg[17][13] | 18     | 14    | NO           | NO                 | YES               | 0      | 14      | 
+|qpsk_rx     | u_cf/u_unit/vo_reg             | 19     | 1     | YES          | NO                 | YES               | 0      | 1       | 
+|qpsk_rx     | u_cf/u_vec/vo_reg              | 18     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|qpsk_rx     | u_ff/u_vec/vo_reg              | 37     | 1     | YES          | NO                 | YES               | 0      | 2       | 
+|qpsk_rx     | u_str/f5_v_reg                 | 5      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|qpsk_rx     | u_str/f4_c0q_reg[15]           | 4      | 16    | YES          | NO                 | YES               | 16     | 0       | 
+|qpsk_rx     | u_str/f4_c0i_reg[15]           | 4      | 16    | YES          | NO                 | YES               | 16     | 0       | 
+|qpsk_rx     | u_str/f5_ot_reg                | 5      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|qpsk_rx     | u_det/spw_reg[31][31]          | 32     | 32    | YES          | NO                 | YES               | 0      | 32      | 
+|qpsk_rx     | u_ext/dQ_reg[9][15]            | 10     | 16    | YES          | NO                 | YES               | 16     | 0       | 
+|qpsk_rx     | u_ext/dI_reg[9][15]            | 10     | 16    | YES          | NO                 | YES               | 16     | 0       | 
++------------+--------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++-----------------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name            | DSP Mapping   | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-----------------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|qpsk_channel           | (A*B)'        | 30     | 12     | -      | -      | 38     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|qpsk_channel           | (A*B)'        | 30     | 12     | -      | -      | 38     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|cordic_rot             | (C+A*B)'      | 30     | 15     | 15     | -      | 31     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|cordic_rot             | (C+A*B)'      | 30     | 15     | 15     | -      | 31     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|rx_agc                 | C+A*B         | 20     | 18     | 12     | -      | 36     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|rx_agc                 | A*B           | 30     | 18     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|rx_agc                 | C+A*B         | 20     | 18     | 12     | -      | 36     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|rx_agc                 | A*B           | 30     | 18     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|rx_agc                 | A*B           | 20     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|rx_agc                 | PCIN>>17+A*B  | 20     | 18     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|cordic_rot             | (C+A*B)'      | 30     | 15     | 15     | -      | 31     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|cordic_rot             | (C+A*B)'      | 30     | 15     | 15     | -      | 31     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|packet_detector        | A*B           | 30     | 18     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|packet_detector        | PCIN+A*B      | 30     | 18     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|packet_detector        | A*B           | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|packet_detector        | A*B           | 30     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fine_freq_rec          | A*B           | 30     | 16     | -      | -      | 31     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fine_freq_rec          | A*B           | 30     | 15     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|cordic_rot             | (C+A*B)'      | 30     | 15     | 15     | -      | 31     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|cordic_rot             | (C+A*B)'      | 30     | 15     | 15     | -      | 31     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|fir_rrc_rx             | A*B           | 30     | 14     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 18     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 13     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 13     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 11     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 18     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 18     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 18     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 7      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 9      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 7      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 18     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 18     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 5      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 8      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 7      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 18     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 18     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 18     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 6      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | (PCIN+A*B)'   | 30     | 6      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_rrc_rx             | A*B           | 30     | 14     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 18     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 13     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 13     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 11     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 18     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 18     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 18     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 7      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 9      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 7      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 18     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 18     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 5      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 8      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 7      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 18     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 18     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 18     | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | PCIN+A*B      | 30     | 6      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_rrc_rx             | (PCIN+A*B)'   | 30     | 6      | -      | -      | 39     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|symbol_timing_recovery | (C+A*B)'      | 30     | 13     | 15     | -      | 33     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|symbol_timing_recovery | (C+A*B)'      | 30     | 13     | 15     | -      | 33     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|symbol_timing_recovery | C+A*B         | 30     | 16     | 16     | -      | 37     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|symbol_timing_recovery | C+A*B         | 30     | 16     | 16     | -      | 38     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|symbol_timing_recovery | C+A*B         | 30     | 16     | 16     | -      | 39     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|symbol_timing_recovery | (C+A*B)'      | 30     | 13     | 15     | -      | 33     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|symbol_timing_recovery | (C+A*B)'      | 30     | 13     | 15     | -      | 33     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
+|symbol_timing_recovery | C+A*B         | 30     | 16     | 16     | -      | 37     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|symbol_timing_recovery | C+A*B         | 30     | 16     | 16     | -      | 38     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|symbol_timing_recovery | C+A*B         | 30     | 16     | 16     | -      | 39     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|symbol_timing_recovery | D-A*B         | 30     | 18     | -      | 25     | 33     | 0    | 0    | -    | 0    | 0     | 0    | 0    | 
+|symbol_timing_recovery | (PCIN+D-A*B)' | 30     | 18     | -      | 25     | 33     | 0    | 0    | -    | 0    | 0     | 0    | 1    | 
+|symbol_timing_recovery | A*B           | 30     | 15     | -      | -      | 38     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|symbol_timing_recovery | A*B           | 30     | 15     | -      | -      | 38     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|fir_interp_rrc         | (A*B)'        | 30     | 18     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_interp_rrc         | (A*B)'        | 30     | 18     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_interp_rrc         | (A*B)'        | 30     | 18     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_interp_rrc         | (A*B)'        | 30     | 18     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_interp_rrc         | (A*B)'        | 30     | 15     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_interp_rrc         | (A*B)'        | 30     | 18     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_interp_rrc         | (A*B)'        | 30     | 18     | -      | -      | 28     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_interp_rrc         | (A*B)'        | 30     | 18     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_interp_rrc         | (A*B)'        | 30     | 18     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_interp_rrc         | (A*B)'        | 30     | 18     | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_interp_rrc         | (A*B)'        | 30     | 18     | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_interp_rrc         | (A*B)'        | 30     | 18     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_interp_rrc         | (A*B)'        | 30     | 18     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_interp_rrc         | (A*B)'        | 30     | 18     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_interp_rrc         | (A*B)'        | 30     | 18     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_interp_rrc         | (A*B)'        | 30     | 15     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_interp_rrc         | (A*B)'        | 30     | 18     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_interp_rrc         | (A*B)'        | 30     | 18     | -      | -      | 28     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_interp_rrc         | (A*B)'        | 30     | 18     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_interp_rrc         | (A*B)'        | 30     | 18     | -      | -      | 26     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_interp_rrc         | (A*B)'        | 30     | 18     | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|fir_interp_rrc         | (A*B)'        | 30     | 18     | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 1    | 
++-----------------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |vio_qpsk      |         1|
+|2     |ila_qpsk      |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+------------+------+
+|      |Cell        |Count |
++------+------------+------+
+|1     |ila_qpsk    |     1|
+|2     |vio_qpsk    |     1|
+|3     |BUFG        |     1|
+|4     |CARRY4      |  2644|
+|5     |DSP48E1     |    98|
+|11    |LUT1        |  1005|
+|12    |LUT2        |  4837|
+|13    |LUT3        |  4653|
+|14    |LUT4        |   760|
+|15    |LUT5        |   556|
+|16    |LUT6        |   962|
+|17    |MMCME2_BASE |     1|
+|18    |SRL16E      |    67|
+|19    |SRLC32E     |    50|
+|20    |FDCE        | 10462|
+|21    |FDPE        |   126|
+|22    |FDRE        |   169|
+|23    |IBUF        |    11|
+|24    |OBUF        |     8|
++------+------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:56 ; elapsed = 00:03:05 . Memory (MB): peak = 2108.535 ; gain = 1312.004
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 28 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:36 ; elapsed = 00:02:54 . Memory (MB): peak = 2108.535 ; gain = 1237.094
+Synthesis Optimization Complete : Time (s): cpu = 00:01:56 ; elapsed = 00:03:05 . Memory (MB): peak = 2108.535 ; gain = 1312.004
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.438 . Memory (MB): peak = 2108.535 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2743 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 2124.777 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  MMCME2_BASE => MMCME2_ADV: 1 instance 
+
+Synth Design complete | Checksum: 2c9eb6a0
+INFO: [Common 17-83] Releasing license: Synthesis
+71 Infos, 78 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:09 ; elapsed = 00:03:24 . Memory (MB): peak = 2124.777 ; gain = 1560.008
+Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 2124.777 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.runs/synth_1/zed_qpsk_top.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:01 ; elapsed = 00:00:20 . Memory (MB): peak = 2124.777 ; gain = 0.000
+INFO: [Vivado 12-24828] Executing command : report_utilization -file zed_qpsk_top_utilization_synth.rpt -pb zed_qpsk_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 12 05:44:49 2026...
+[Mon Oct 12 05:44:54 2026] synth_1 finished
+wait_on_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:07:16 . Memory (MB): peak = 646.840 ; gain = 0.152
+# if {[get_property PROGRESS [get_runs synth_1]] ne "100%"} {
+#     error "synthesis failed"
+# }
+# launch_runs impl_1 -to_step write_bitstream -jobs $jobs
+[Mon Oct 12 05:44:56 2026] Launched impl_1...
+Run output will be captured here: E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.runs/impl_1/runme.log
+# wait_on_run impl_1
+[Mon Oct 12 05:44:56 2026] Waiting for impl_1 to finish...
+
+*** Running vivado
+    with args -log zed_qpsk_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source zed_qpsk_top.tcl -notrace
+
+
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Mon Oct 12 05:45:02 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source zed_qpsk_top.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 526.246 ; gain = 223.395
+Command: link_design -top zed_qpsk_top -part xc7z020clg484-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-5699] Read binary netlist with skipMacroContent - 1
+INFO: [Project 1-454] Reading design checkpoint 'e:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.gen/sources_1/ip/ila_qpsk/ila_qpsk.dcp' for cell 'u_ila'
+INFO: [Project 1-454] Reading design checkpoint 'e:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.gen/sources_1/ip/vio_qpsk/vio_qpsk.dcp' for cell 'u_vio'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.304 . Memory (MB): peak = 886.117 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 3115 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Chipscope 16-324] Core: u_ila UUID: c30a8330-47ba-5203-8dbc-7e3e3214d902 
+INFO: [Chipscope 16-324] Core: u_vio UUID: 407d14e8-1cc9-58ef-8c2e-354d7bf170fd 
+Parsing XDC File [e:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.gen/sources_1/ip/ila_qpsk/ila_v6_2/constraints/ila_impl.xdc] for cell 'u_ila/inst'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [e:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.gen/sources_1/ip/ila_qpsk/ila_v6_2/constraints/ila_impl.xdc:31]
+Finished Parsing XDC File [e:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.gen/sources_1/ip/ila_qpsk/ila_v6_2/constraints/ila_impl.xdc] for cell 'u_ila/inst'
+Parsing XDC File [e:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.gen/sources_1/ip/ila_qpsk/ila_v6_2/constraints/ila.xdc] for cell 'u_ila/inst'
+WARNING: [Vivado_Tcl 4-921] Waiver ID 'CDC-10' -to list should not be empty. [e:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.gen/sources_1/ip/ila_qpsk/ila_v6_2/constraints/ila.xdc:108]
+Finished Parsing XDC File [e:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.gen/sources_1/ip/ila_qpsk/ila_v6_2/constraints/ila.xdc] for cell 'u_ila/inst'
+Parsing XDC File [e:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.gen/sources_1/ip/vio_qpsk/vio_qpsk.xdc] for cell 'u_vio'
+Finished Parsing XDC File [e:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/build/proj/zed_qpsk.gen/sources_1/ip/vio_qpsk/vio_qpsk.xdc] for cell 'u_vio'
+Parsing XDC File [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/zedboard.xdc]
+Finished Parsing XDC File [E:/Documents/QPSK/qpsk_hdl/qpsk_hdl/board/zedboard/zedboard.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-1687] 2 scoped IP constraints or related sub-commands were skipped due to synthesis logic optimizations usually triggered by constant connectivity or unconnected output pins. To review the skipped constraints and messages, run the command 'set_param netlist.IPMsgFiltering false' before opening the design.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1041.750 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 136 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 136 instances
+
+13 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:46 . Memory (MB): peak = 1041.750 ; gain = 474.027
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1068.938 ; gain = 27.188
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-2] Deriving generated clocks
+Ending Cache Timing Information Task | Checksum: 17ad70e3b
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1650.367 ; gain = 581.430
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+
+Phase 1.1.1 Generate And Synthesize Debug Cores
+INFO: [Chipscope 16-329] Generating Script for core instance : dbg_hub 
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:3.0 for cell dbg_hub_CV.
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 2136.336 ; gain = 0.000
